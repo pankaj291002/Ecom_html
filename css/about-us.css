@@ -1,0 +1,377 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header {
+    background-color: #090817;
+    border-bottom: 3px solid rgb(0, 242, 255);
+   
+
+}
+
+.header nav a {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+.btn {
+    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+    --border-width: .125em;
+    --curve-size: .5em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: #afffff;
+    color: var(--color);
+    /* use position: relative; so that BG is only for .btn */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: .5em 1.5em;
+    font-size: 17px;
+    border: 0;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+    clip-path: polygon(
+            /* Top-left */
+            0% var(--curve-size),
+
+            var(--curve-size) 0,
+            /* top-right */
+            100% 0,
+            100% calc(100% - var(--curve-size)),
+
+            /* bottom-right 1 */
+            calc(100% - var(--curve-size)) 100%,
+            /* bottom-right 2 */
+            0 100%);
+    transition: color 250ms;
+}
+
+.btn::after,
+.btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+}
+
+@keyframes move-bg7234 {
+    0% {
+        background-position: 31% 0%
+    }
+
+    50% {
+        background-position: 70% 100%
+    }
+
+    100% {
+        background-position: 31% 0%
+    }
+}
+
+.btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+            /* Top-left */
+            var(--border-width) calc(var(--curve-size) + var(--border-width) * .5),
+
+            calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+            /* top-right */
+            calc(100% - var(--border-width)) var(--border-width),
+
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+            /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+            /* bottom-right 2 */
+            var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+    clip-path: polygon(
+            /* Top-left */
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+
+            calc(100% - var(--border-width)) var(--border-width),
+
+            /* top-right */
+            calc(100% - var(--border-width)) var(--border-width),
+
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+            /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+
+            /* bottom-right 2 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)));
+    transition: 200ms;
+}
+
+.btn:where(:hover, :focus) {
+    color: #fff;
+}
+
+/* header part end */
+
+.banner {
+    background-color: #181819;
+    background-image: url(../image/bg-logotipo-right.370f1a05d74c3a9ae351.svg);
+    padding: 70px;
+    background-position: right;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.text h2 {
+    font-size: 65px;
+    color: #00fffb;
+}
+
+.text h5 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+/* banner */
+
+.our-mission {
+    background-color: #090817;
+    padding: 60px;
+}
+
+.mission-img img {
+    border-radius: 15px;
+    height: 450px;
+}
+
+.mission-text {
+    color: #fff;
+    margin-top: 35px;
+}
+
+.mission-text h2 {
+    font-size: 50px;
+    color: #00fffb;
+
+}
+
+.mission-text p {
+    font-weight: 200;
+}
+
+.mission-ankar {
+    padding: 7px 22px;
+    border-radius: 35px;
+    transition: all .5s ease-in;
+    background-image: linear-gradient(80deg, #f20687, #077ee7);
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.mission-ankar:hover {
+    border-radius: 35px;
+    background-color: transparent;
+    border: 2px solid rgb(6, 199, 243);
+    translate: 50% -40%;
+}
+
+                       /* Who We are end */
+
+.expart-team{
+    padding: 50px;
+    background-color:#181819;
+    background-image: url(../image/bg-logotipo2-left.882a602ea499230324c5.svg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+.expart-team-heading{
+    position: absolute;
+    top: 870px;
+    bottom: 0;
+    left: 120px;
+    right: 0;
+}
+.expart-team-heading h2{
+    font-size: 45px;
+    color: #00fffb;
+}
+.img-box img{
+    height: 364px;
+    border-radius: 10px;
+}
+.expart-text{
+    color: #fff;
+    padding-top: 10px;
+}
+.expart-text h6{
+    font-weight: 300;
+}
+.footer-icon i{
+    color: #f251ba;
+    font-size: 21px;
+    padding-right: 7px;
+  }
+                    /* Expert team end */
+
+.frequenly-question{
+    padding: 40px;
+    background-color: #090817;
+    color: #fff;
+}
+.frequenly-heading{
+    text-align: center;
+    color: #00fffb;
+}
+.frequenly-heading h2{
+    font-size: 45px;
+    padding-bottom: 20px;
+}
+
+.content-1{
+    border: 1px solid wheat;
+    color: #fff;
+    margin-top: 15px;
+    border-radius: 7px;
+    padding: 9px 0 10px 9px;
+}
+.logo-text{
+    display: flex;
+    padding-top: 15px;
+}
+.logo-icon img{
+    height: 42px;
+}
+.right-side-contents{
+    padding-top: 70px;
+}
+
+.right-text{
+    padding: 9px 0 0 20px;
+}
+.right-text h6{
+    font-size: 22px;
+}
+                                         /* freuenly part */
+
+ .gradian-part{
+    background-color: #090817;
+    padding: 30px;
+ }
+ .gradian-img{
+    background-image: url(../image/bg-n.svg),linear-gradient(80deg, #f20687, #077ee7);
+    background-repeat: repeat;
+    padding: 40px;
+    color: #fff;
+    border-radius: 10px;
+ }
+ .gradian-ankar{
+    padding: 8px 22px;
+    border-radius: 35px;
+    background-color: #080312;
+    display: inline-block;
+    margin: 38px 0 0 10px;
+    transition: all .5s ease-out;
+    border: 2px solid #080312;
+ }
+ .gradian-ankar:hover{
+    background-color: transparent;
+    border: 2px solid rgb(255, 0, 115);
+    color: #fff;
+    transform: scale(1.1);
+    
+ }
+ .middle-point{
+    padding-left: 15px;
+ }
+ .head-icon {
+    position: absolute;
+    top: 1950px;
+    bottom: 0;
+    left: 172px;
+    right: 0;
+ }
+ .head-icon i{
+    font-size: 60px;
+    background-color: #080312;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+   padding: 17px;
+ }
+                 /* gradian part-end */
+
+                 .footer{
+                    padding: 40px;
+                    background-color: #090817;
+                    color: #fff;
+                    border-top: 2px solid rgba(244, 42, 244, 0.436);
+                  }
+                  .footer-logo img{
+                    width: 180px;
+                  }
+                  .img-post-text{
+                    display: flex;
+                  }
+                  .img-12 img{
+                     border-radius: 7px;
+                     height: 100px;
+                  }
+                  .img-post-text{
+                    padding-bottom: 20px;
+                  }
+                  .text-post{
+                    padding-left: 25px;
+                  }
+                  .text-post p{
+                    font-size: 12px;
+                    font-weight: 200;
+                  }
+                  .text-post a:hover{
+                    color: rgb(244, 106, 129);
+                    transition: all  .4s ease-in-out;
+                    font-weight: 300;
+                  }
+                  .footer-logo{
+                    padding-bottom: 20px;
+                  }
+                  .footer-icon i{
+                    color: #f251ba;
+                    font-size: 21px;
+                    padding-right: 7px;
+                  }
+                  .footer-part-details h4{
+                    padding-bottom: 20px;
+                  }
+                  .copy-right{
+                    text-align: center;
+                  }
+                  .copy-right .copy-right-section{
+                    font-weight: 200;
+                    font-size: 14px;
+                    margin-top: 20px;
+                  }
+                  .copy-right span{
+                    color:#f251ba ;
+                  }
